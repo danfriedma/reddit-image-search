@@ -1,0 +1,35 @@
+.search-bar {
+  position:fixed;
+  height: 30px;
+  top: 0;
+  width: 100%;
+  font-size: 2em;
+  z-index: 1;
+}
+.loading {
+  position:fixed;
+  top:20%;
+  left:2%;
+  font-size: 3em;
+}
+.image-list {
+  margin-top: 36px;
+}
+.image-container {
+  max-width: 33.33%;
+}
+.image {
+  max-width:100%;
+  height: auto;
+  display: block;
+}
+
+@media (min-width: 600px) {
+  .search-bar {
+    height: 50px;
+    font-size: 3em;
+  }
+  .image-list {
+    margin-top: 56px;
+  }
+}
