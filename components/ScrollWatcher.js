@@ -1,6 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import { connect } from 'react-redux'
-import { loadMore } from '../redux/actions'
 
 class ScrollWatcher extends Component {
   constructor(props) {
@@ -25,12 +23,8 @@ class ScrollWatcher extends Component {
   render () { return null }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    onBottomOfPage: () => {
-      dispatch(loadMore())
-    }
-  }
+ScrollWatcher.PropTypes = {
+  onBottomOfPage: PropTypes.func.isRequired
 }
 
-export default connect(undefined, mapDispatchToProps)(ScrollWatcher)
+export default ScrollWatcher

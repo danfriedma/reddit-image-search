@@ -4,7 +4,7 @@ import DebounceInput from 'react-debounce-input'
 import ScrollWatcher from './ScrollWatcher'
 import { search, loadMore } from '../redux/actions'
 
-const Search = ({ onChange }) => {
+const Search = ({ onChange, onBottomOfPage }) => {
   return (<div>
     <DebounceInput
       type="text"
@@ -15,13 +15,14 @@ const Search = ({ onChange }) => {
       forceNotifyByEnter={true}
       forceNotifyOnBlur={true} />
       
-    <ScrollWatcher />
+    <ScrollWatcher onBottomOfPage={onBottomOfPage} />
   </div>)
 }
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    onChange: (event) => dispatch(search(event.target.value))
+    onChange: (event) => dispatch(search(event.target.value)),
+    onBottomOfPage: () => dispatch(loadMore())
   }
 }
 
